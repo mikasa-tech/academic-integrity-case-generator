@@ -1,0 +1,5 @@
+# Keep generated data byte-identical on every OS (no CRLF conversion), so checksums match.
+data/** -text
+docs/** -text
+dashboard/** -text
+* text=auto

@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.backup.py
+*.backup.html
+.venv/
+venv/
+starter/
+integrity.db
