@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Integrity Case Review · Synthetic Audit Console</title>
+    <style>
+      :root {
+        --bg: #eef1f6;
+        --panel: #fff;
+        --ink: #14213d;
+        --mute: #5b6784;
+        --line: #d9dfeb;
+        --cobalt: #2b59ff;
+        --amber: #d98e04;
+        --rose: #c8344b;
+        --teal: #0f8b8d;
+        --r: 10px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0d1424;
+          --panel: #151f36;
+          --ink: #e8edf8;
+          --mute: #93a0c0;
+          --line: #27324f;
+          --cobalt: #6f93ff;
+          --amber: #f0b429;
+          --rose: #ff6b81;
+          --teal: #3cc5c7;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          15px/1.5 system-ui,
+          Segoe UI,
+          sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Georgia, "Iowan Old Style", serif;
+        font-weight: 600;
+        margin: 0;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid var(--cobalt);
+        outline-offset: 2px;
+      }
+      .app {
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        min-height: 100vh;
+      }
+      nav {
+        background: var(--ink);
+        color: #e8edf8;
+        padding: 26px 18px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+      nav h1 {
+        font-size: 21px;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+      nav small {
+        color: #9fb0d6;
+        display: block;
+        margin-bottom: 28px;
+      }
+      nav button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        border-left: 3px solid transparent;
+        padding: 10px 12px;
+        color: #c4cfe8;
+        cursor: pointer;
+        border-radius: 0 8px 8px 0;
+      }
+      nav button[aria-current="true"] {
+        background: #ffffff14;
+        border-color: #7d9bff;
+        color: #fff;
+      }
+      nav .foot {
+        position: absolute;
+        bottom: 22px;
+        left: 18px;
+        right: 18px;
+        font-size: 12px;
+        color: #8fa0c8;
+      }
+      main {
+        padding: 30px 38px 60px;
+        max-width: 1280px;
+      }
+      section {
+        display: none;
+      }
+      section.on {
+        display: block;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 22px;
+      }
+      .hero {
+        padding: 28px 30px;
+        margin-bottom: 18px;
+      }
+      .hero h2 {
+        font-size: 30px;
+        line-height: 1.15;
+        max-width: 760px;
+      }
+      .hero p {
+        color: var(--mute);
+        max-width: 660px;
+        margin: 8px 0 18px;
+      }
+      .lab {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 26px;
+        align-items: center;
+      }
+      .big {
+        font-family: Georgia, serif;
+        font-size: 46px;
+        line-height: 1;
+      }
+      .cmp {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 10px 0;
+      }
+      .cmp div {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px 12px;
+      }
+      .cmp small {
+        color: var(--mute);
+        display: block;
+      }
+      input[type="range"] {
+        width: 100%;
+        accent-color: var(--cobalt);
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .kpis .card {
+        padding: 14px 16px;
+      }
+      .kpis b {
+        font:
+          600 26px Georgia,
+          serif;
+        display: block;
+      }
+      .kpis span {
+        color: var(--mute);
+        font-size: 13px;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 7px 0;
+        font-size: 14px;
+      }
+      .bar i {
+        display: block;
+        height: 14px;
+        border-radius: 3px;
+        background: var(--cobalt);
+      }
+      .bar span:first-child {
+        width: 150px;
+        color: var(--mute);
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 340px 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+      .list {
+        max-height: 78vh;
+        overflow: auto;
+        padding: 8px;
+      }
+      .row {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      .row:hover,
+      .row[aria-current="true"] {
+        background: color-mix(in srgb, var(--cobalt) 12%, transparent);
+      }
+      .row small {
+        color: var(--mute);
+        display: block;
+      }
+      .pill {
+        display: inline-block;
+        font-size: 12px;
+        padding: 1px 9px;
+        border-radius: 99px;
+        border: 1px solid var(--line);
+        margin-right: 6px;
+      }
+      .pill.bad {
+        color: var(--rose);
+        border-color: var(--rose);
+      }
+      .pill.ok {
+        color: var(--teal);
+        border-color: var(--teal);
+      }
+      .pill.warn {
+        color: var(--amber);
+        border-color: var(--amber);
+      }
+      .tl {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0 0 0 18px;
+        border-left: 2px solid var(--line);
+      }
+      .tl li {
+        position: relative;
+        margin: 0 0 12px;
+        padding-left: 12px;
+      }
+      .tl li:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--cobalt);
+        border: 2px solid var(--panel);
+      }
+      .tl li.EvidenceItem:before {
+        background: var(--amber);
+      }
+      .tl li.Appeal:before {
+        background: var(--teal);
+      }
+      .tl li.SimilarityReport:before {
+        background: var(--mute);
+      }
+      .tl small {
+        color: var(--mute);
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 14px;
+      }
+      h3 {
+        font-size: 17px;
+        margin: 14px 0 6px;
+      }
+      .find {
+        border-left: 4px solid var(--rose);
+        padding: 10px 14px;
+        margin: 12px 0;
+        background: color-mix(in srgb, var(--rose) 8%, transparent);
+        border-radius: 0 8px 8px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        padding: 9px 8px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        color: var(--mute);
+        font-weight: 500;
+      }
+      .btn {
+        background: var(--cobalt);
+        color: #fff;
+        border: 0;
+        border-radius: 8px;
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+      .btn.alt {
+        background: none;
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .chips button {
+        margin: 0 6px 6px 0;
+      }
+      .cid {
+        color: var(--cobalt);
+        cursor: pointer;
+        background: none;
+        border: 0;
+        padding: 0;
+        text-decoration: underline;
+      }
+      @media (max-width: 900px) {
+        .app {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          position: static;
+          height: auto;
+        }
+        nav .foot {
+          display: none;
+        }
+        nav button {
+          display: inline-block;
+          width: auto;
+        }
+        main {
+          padding: 20px;
+        }
+        .lab,
+        .grid2,
+        .split,
+        .cols {
+          grid-template-columns: 1fr;
+        }
+        .kpis {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <nav>
+        <h1>Integrity Case Review</h1>
+        <small>Synthetic audit console · seed <span id="seed"></span></small>
+        <button data-v="ov" aria-current="true">Threshold lab</button
+        ><button data-v="cs">Case explorer</button
+        ><button data-v="au">Audit findings</button>
+        <div class="foot">
+          Every record is synthetic. A similarity score opens a review. It never
+          decides guilt.
+        </div>
+      </nav>
+      <main>
+        <section id="ov" class="on">
+          <div class="card hero">
+            <h2>A 25% match does not mean a student cheated.</h2>
+            <p>
+              Raw similarity counts quoted passages and shared templates. The
+              rules subtract both before anyone is flagged. Move the threshold
+              and compare.
+            </p>
+            <div class="lab">
+              <div>
+                <svg
+                  id="hist"
+                  viewBox="0 0 560 220"
+                  width="100%"
+                  role="img"
+                  aria-label="Histogram of raw and adjusted similarity scores"
+                ></svg>
+                <label for="th">Review threshold: <b id="thv"></b></label
+                ><input id="th" type="range" min="5" max="90" value="25" />
+              </div>
+              <div>
+                <div class="cmp">
+                  <div>
+                    <small>Flagged on raw score</small
+                    ><b class="big" id="fr"></b>
+                  </div>
+                  <div>
+                    <small>Flagged after exclusions</small
+                    ><b class="big" id="fa"></b>
+                  </div>
+                </div>
+                <p id="story" style="margin: 0"></p>
+              </div>
+            </div>
+          </div>
+          <div class="kpis" id="kpis"></div>
+          <div class="grid2">
+            <div class="card">
+              <h3>Review bands (current reports)</h3>
+              <div id="bands"></div>
+            </div>
+            <div class="card">
+              <h3>What happened to the 300 cases</h3>
+              <div id="outs"></div>
+            </div>
+          </div>
+        </section>
+        <section id="cs">
+          <div
+            class="chips card"
+            style="padding: 14px 16px; margin-bottom: 14px"
+          >
+            <input
+              id="q"
+              placeholder="Search case or submission ID"
+              aria-label="Search cases"
+              style="
+                padding: 8px 10px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                background: var(--panel);
+                margin-right: 8px;
+              "
+            />
+            <select
+              id="fs"
+              aria-label="Filter"
+              style="
+                padding: 8px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                background: var(--panel);
+              "
+            >
+              <option value="">All cases</option>
+              <option value="flag">Audit findings only</option>
+              <option value="appeal">With an appeal</option>
+              <option value="open">Still open</option>
+              <option value="sla">SLA breached</option>
+            </select>
+          </div>
+          <div class="split">
+            <div class="card list" id="list"></div>
+            <div class="card" id="detail"></div>
+          </div>
+        </section>
+        <section id="au">
+          <div class="card hero">
+            <h2>
+              The validator finds four planted failures without seeing the
+              answer key.
+            </h2>
+            <p>
+              Detectors use only the input tables. Reveal the key to compare
+              against the labelled ground truth.
+            </p>
+            <button class="btn" id="rev" aria-pressed="false">
+              Reveal answer key
+            </button>
+            <span id="chk" class="pill ok"></span>
+          </div>
+          <div class="card"><table id="dt"></table></div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const D = __DATA__;
+      const $ = (s) => document.querySelector(s),
+        E = (t, h, c) => {
+          const e = document.createElement(t);
+          if (h != null) e.innerHTML = h;
+          if (c) e.className = c;
+          return e;
+        };
+      const N = D.manifest.row_counts,
+        esc = (s) =>
+          String(s ?? "").replace(
+            /[&<>]/g,
+            (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[m],
+          ),
+        nice = (s) => String(s).replace(/_/g, " ");
+      $("#seed").textContent = D.manifest.seed;
+      document.querySelectorAll("nav button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            document
+              .querySelectorAll("nav button")
+              .forEach((x) => x.removeAttribute("aria-current"));
+            b.setAttribute("aria-current", "true");
+            document
+              .querySelectorAll("section")
+              .forEach((s) => s.classList.toggle("on", s.id == b.dataset.v));
+          }),
+      );
+      // ---- threshold lab
+      const bins = 20,
+        hr = Array(bins).fill(0),
+        ha = Array(bins).fill(0);
+      D.reports.forEach(([r, a]) => {
+        hr[Math.min(bins - 1, (r * bins) | 0)]++;
+        ha[Math.min(bins - 1, (a * bins) | 0)]++;
+      });
+      function lab() {
+        const t = $("#th").value / 100;
+        $("#thv").textContent = Math.round(t * 100) + "%";
+        let fr = 0,
+          fa = 0,
+          pr = 0;
+        D.reports.forEach(([r, a]) => {
+          if (r >= t) fr++;
+          if (a >= t) fa++;
+          if (r >= t && a < t) pr++;
+        });
+        $("#fr").textContent = fr.toLocaleString();
+        $("#fa").textContent = fa.toLocaleString();
+        $("#story").textContent = pr
+          ? `${pr.toLocaleString()} submissions would have been flagged on raw similarity alone. After quotes and shared templates are excluded, they are not flagged.`
+          : "At this threshold, exclusions change nothing.";
+        const mx = Math.max(...hr, ...ha),
+          w = 560 / bins;
+        let s = "";
+        for (let i = 0; i < bins; i++) {
+          const h1 = (hr[i] / mx) * 170,
+            h2 = (ha[i] / mx) * 170;
+          s += `<rect x="${i * w + 2}" y="${190 - h1}" width="${w / 2 - 2}" height="${h1}" fill="var(--mute)" opacity=".45"/><rect x="${i * w + w / 2}" y="${190 - h2}" width="${w / 2 - 2}" height="${h2}" fill="var(--cobalt)"/>`;
+        }
+        s += `<line x1="${t * 560}" x2="${t * 560}" y1="6" y2="190" stroke="var(--rose)" stroke-width="2"/><text x="4" y="212" fill="var(--mute)" font-size="11">0%</text><text x="530" y="212" fill="var(--mute)" font-size="11">100%</text><text x="150" y="212" fill="var(--mute)" font-size="11">grey = raw · blue = after exclusions</text>`;
+        $("#hist").innerHTML = s;
+      }
+      $("#th").oninput = lab;
+      lab();
+      const cur = D.reports.length;
+      const ap = D.cases.filter((c) => c.apl),
+        won = ap.filter((c) =>
+          ["overturned", "reduced"].includes(c.apl[1]),
+        ).length;
+      [
+        [cur.toLocaleString(), "submissions"],
+        [
+          D.reports.filter((r) => r[1] >= 0.25).length.toLocaleString(),
+          "flags raised",
+        ],
+        [D.cases.length, "cases opened"],
+        [`${won} of ${ap.length}`, "appeals succeeded"],
+        [
+          `${D.checks[0] + D.checks[2] - D.checks[1] - D.checks[3]}/${D.checks[0] + D.checks[2]}`,
+          "checks passing",
+        ],
+      ].forEach(([b, s]) =>
+        $("#kpis").append(E("div", `<b>${b}</b><span>${s}</span>`, "card")),
+      );
+      const bandDefs = [
+        ["No action  (<25%)", (r) => r < 0.25],
+        ["Standard review (25–49%)", (r) => r >= 0.25 && r < 0.5],
+        ["Priority review (50–74%)", (r) => r >= 0.5 && r < 0.75],
+        ["Panel escalation (75%+)", (r) => r >= 0.75],
+      ];
+      bandDefs.forEach(([n, f]) => {
+        const k = D.reports.filter((r) => f(r[1])).length;
+        $("#bands").append(
+          E(
+            "div",
+            `<span>${n}</span><i style="width:${Math.max(3, (k / cur) * 100 * 3)}px"></i><b>${k.toLocaleString()}</b>`,
+            "bar",
+          ),
+        );
+      });
+      const oc = {};
+      D.cases.forEach((c) => {
+        const k = c.outcome || "undecided";
+        oc[k] = (oc[k] || 0) + 1;
+      });
+      Object.entries(oc)
+        .sort((a, b) => b[1] - a[1])
+        .forEach(([k, v]) =>
+          $("#outs").append(
+            E(
+              "div",
+              `<span>${nice(k)}</span><i style="width:${v * 2.2}px;background:${/violation/.test(k) ? "var(--rose)" : "var(--teal)"}"></i><b>${v}</b>`,
+              "bar",
+            ),
+          ),
+        );
+      // ---- case explorer
+      let cur_id = null;
+      function draw() {
+        const q = $("#q").value.toLowerCase(),
+          f = $("#fs").value,
+          L = $("#list");
+        const filtered = D.cases.filter(
+          (c) =>
+            (c.id + c.sub).toLowerCase().includes(q) &&
+            (!f ||
+              (f == "flag" && c.flags.length) ||
+              (f == "appeal" && c.apl) ||
+              (f == "open" && c.status != "closed") ||
+              (f == "sla" && c.sla)),
+        );
+
+        L.innerHTML = "";
+        filtered.forEach((c) => {
+          const b = E(
+            "button",
+            `<b>${c.id}</b> ${c.flags.length ? '<span class="pill bad">finding</span>' : ""}<small>${nice(c.action)} · ${Math.round(c.score * 100)}% adjusted · ${nice(c.status)}</small>`,
+            "row",
+          );
+          b.onclick = () => show(c.id);
+          if (c.id == cur_id) b.setAttribute("aria-current", "true");
+          L.append(b);
+        });
+
+        if (filtered.length) {
+          if (!cur_id || !filtered.some((c) => c.id === cur_id)) {
+            show(filtered[0].id);
+          }
+        } else {
+          cur_id = null;
+          $("#detail").innerHTML =
+            "<p>No cases match your search or filter. Try changing or clearing the filters.</p>";
+        }
+      }
+      function show(id) {
+        cur_id = id;
+        draw();
+        const c = D.cases.find((x) => x.id == id);
+        let h = `<h2>${c.id}</h2><p style="color:var(--mute);margin:2px 0 8px">${c.sub} · raw ${Math.round(c.raw * 100)}% → adjusted ${Math.round(c.score * 100)}% · opened ${c.opened.slice(0, 10)}</p>`;
+        c.flags.forEach(
+          (f) =>
+            (h += `<div class="find"><b>Audit finding:</b> ${nice(f)}. Raised by the validator from the data alone.</div>`),
+        );
+        h += `<span class="pill ${/violation/.test(c.outcome) ? "bad" : "ok"}">${nice(c.outcome || "undecided")}</span><span class="pill">${nice(c.status)}</span>${c.sla ? '<span class="pill warn">SLA breached</span>' : ""}`;
+        c.dec.forEach(
+          (d) =>
+            (h += `<h3>${d[0] === "initial" ? "Decision" : "Appeal decision"}</h3><p style="margin:0">${esc(d[2])}</p><small style="color:var(--mute)">${d[3].slice(0, 16).replace("T", " ")} · basis: ${nice(d[4])}</small>`),
+        );
+        h += `<div class="cols"><div><h3>Reviewers</h3>${c.rev.map((r) => `${r[0]} <span class="pill">${nice(r[1])}</span> ${r[2] ? nice(r[2]) : "no vote yet"}`).join("<br>") || "None assigned"}</div><div><h3>Evidence (${c.evd.length})</h3>${c.evd.map((e) => `#${e[0]} ${nice(e[1])}${e[3] == "appeal" ? ' <span class="pill ok">appeal</span>' : ""}`).join("<br>")}</div></div>`;
+        if (c.apl)
+          h += `<h3>Appeal</h3><p style="margin:0">Grounds: ${nice(c.apl[0])}. Outcome: <b>${c.apl[1]}</b>. Reviewer: ${c.apl[2]} ${c.apl[3] ? '<span class="pill ok">independent</span>' : '<span class="pill bad">not independent</span>'}</p>`;
+        h += `<h3>Timeline</h3><ul class="tl">${c.tl.map((t) => `<li class="${t[1]}"><b>${nice(t[2])}</b> <small>${t[0].slice(0, 16).replace("T", " ")} · ${nice(t[1])}</small><br><small>${esc(t[3])}</small></li>`).join("")}</ul>`;
+        $("#detail").innerHTML = h;
+      }
+      $("#q").oninput = draw;
+      $("#fs").onchange = draw;
+      draw();
+      show(D.cases[0].id);
+      // ---- audit
+      const names = {
+        flag_auto_guilt: [
+          "Flag treated as guilt",
+          "A decision made from the score alone, with no reviewers or review stages.",
+        ],
+        reviewer_conflict: [
+          "Reviewer with a conflict",
+          "A reviewer on the learner's conflict registry sat on the case.",
+        ],
+        evidence_added_after_decision_no_history: [
+          "Evidence added after the decision",
+          "Evidence appeared after the ruling with no audit event and no appeal.",
+        ],
+        appeal_closed_without_independent_review: [
+          "Appeal closed without independent review",
+          "The appeal had no reviewer, or the original reviewer judged it.",
+        ],
+      };
+      let shown = false;
+      function audit() {
+        let h =
+          "<tr><th>Failure</th><th>Detected</th>" +
+          (shown ? "<th>Answer key</th><th>Match</th>" : "") +
+          "<th>Cases</th></tr>";
+        Object.entries(names).forEach(([k, [t, d]]) => {
+          const ids = D.cases.filter((c) => c.flags.includes(k)),
+            key = D.cases.filter((c) => c.key == k);
+          const ok = ids.length == key.length && ids.every((c) => c.key == k);
+          h += `<tr><td><b>${t}</b><br><small style="color:var(--mute)">${d}</small></td><td>${ids.length}</td>${shown ? `<td>${key.length}</td><td><span class="pill ${ok ? "ok" : "bad"}">${ok ? "exact" : "differs"}</span></td>` : ""}<td>${ids.map((c) => `<button class="cid" data-c="${c.id}">${c.id.slice(-4)}</button>`).join(" ")}</td></tr>`;
+        });
+        $("#dt").innerHTML = h;
+        document.querySelectorAll(".cid").forEach(
+          (b) =>
+            (b.onclick = () => {
+              document.querySelector("[data-v=cs]").click();
+              $("#q").value = "";
+              $("#fs").value = "";
+              show("CSE-2026-" + b.dataset.c.slice(-6));
+            }),
+        );
+      }
+      $("#rev").onclick = (e) => {
+        shown = !shown;
+        e.target.textContent = shown ? "Hide answer key" : "Reveal answer key";
+        e.target.setAttribute("aria-pressed", shown);
+        audit();
+      };
+      audit();
+      $("#chk").textContent =
+        `${D.checks[0] + D.checks[2] - D.checks[1] - D.checks[3]} of ${D.checks[0] + D.checks[2]} validation checks pass`;
+    </script>
+  </body>
+</html>
