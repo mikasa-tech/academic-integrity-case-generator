@@ -1,0 +1,1451 @@
+[
+ {
+  "conflict_id": "CNF-00001",
+  "reviewer_id": "REV-0025",
+  "learner_id": "LRN-000012",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-04-04"
+ },
+ {
+  "conflict_id": "CNF-00002",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-000024",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-04-13"
+ },
+ {
+  "conflict_id": "CNF-00003",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-000029",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-01-06"
+ },
+ {
+  "conflict_id": "CNF-00004",
+  "reviewer_id": "REV-0012",
+  "learner_id": "LRN-000034",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-08-10"
+ },
+ {
+  "conflict_id": "CNF-00005",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-000037",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-04"
+ },
+ {
+  "conflict_id": "CNF-00006",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-000054",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-10-11"
+ },
+ {
+  "conflict_id": "CNF-00007",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-000057",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-11"
+ },
+ {
+  "conflict_id": "CNF-00008",
+  "reviewer_id": "REV-0010",
+  "learner_id": "LRN-000069",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-07-31"
+ },
+ {
+  "conflict_id": "CNF-00009",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-000078",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-11-12"
+ },
+ {
+  "conflict_id": "CNF-00010",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-000080",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-09"
+ },
+ {
+  "conflict_id": "CNF-00011",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-000085",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-01-15"
+ },
+ {
+  "conflict_id": "CNF-00012",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-000092",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-04-26"
+ },
+ {
+  "conflict_id": "CNF-00013",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-000103",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-03-03"
+ },
+ {
+  "conflict_id": "CNF-00014",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-000106",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-04-05"
+ },
+ {
+  "conflict_id": "CNF-00015",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-000120",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-01"
+ },
+ {
+  "conflict_id": "CNF-00016",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-000157",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-04-27"
+ },
+ {
+  "conflict_id": "CNF-00017",
+  "reviewer_id": "REV-0030",
+  "learner_id": "LRN-000167",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-04-22"
+ },
+ {
+  "conflict_id": "CNF-00018",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-000206",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-09-24"
+ },
+ {
+  "conflict_id": "CNF-00019",
+  "reviewer_id": "REV-0012",
+  "learner_id": "LRN-000215",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-10-12"
+ },
+ {
+  "conflict_id": "CNF-00020",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-000254",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-09-24"
+ },
+ {
+  "conflict_id": "CNF-00021",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-000267",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-10-18"
+ },
+ {
+  "conflict_id": "CNF-00022",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-000269",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-01-06"
+ },
+ {
+  "conflict_id": "CNF-00023",
+  "reviewer_id": "REV-0026",
+  "learner_id": "LRN-000291",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-04-17"
+ },
+ {
+  "conflict_id": "CNF-00024",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-000331",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-01-26"
+ },
+ {
+  "conflict_id": "CNF-00025",
+  "reviewer_id": "REV-0012",
+  "learner_id": "LRN-000351",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-02-27"
+ },
+ {
+  "conflict_id": "CNF-00026",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-000371",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-09-28"
+ },
+ {
+  "conflict_id": "CNF-00027",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-000378",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-07-09"
+ },
+ {
+  "conflict_id": "CNF-00028",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-000416",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-04-14"
+ },
+ {
+  "conflict_id": "CNF-00029",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-000437",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-04-11"
+ },
+ {
+  "conflict_id": "CNF-00030",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-000445",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-10-10"
+ },
+ {
+  "conflict_id": "CNF-00031",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-000446",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-01-09"
+ },
+ {
+  "conflict_id": "CNF-00032",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-000453",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-02-10"
+ },
+ {
+  "conflict_id": "CNF-00033",
+  "reviewer_id": "REV-0030",
+  "learner_id": "LRN-000456",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-04-12"
+ },
+ {
+  "conflict_id": "CNF-00034",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-000458",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-02-03"
+ },
+ {
+  "conflict_id": "CNF-00035",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-000475",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-03-07"
+ },
+ {
+  "conflict_id": "CNF-00036",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-000486",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-01-30"
+ },
+ {
+  "conflict_id": "CNF-00037",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-000490",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-11"
+ },
+ {
+  "conflict_id": "CNF-00038",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-000511",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-04-16"
+ },
+ {
+  "conflict_id": "CNF-00039",
+  "reviewer_id": "REV-0021",
+  "learner_id": "LRN-000512",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-06-16"
+ },
+ {
+  "conflict_id": "CNF-00040",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-000524",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-12-05"
+ },
+ {
+  "conflict_id": "CNF-00041",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-000529",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-11-17"
+ },
+ {
+  "conflict_id": "CNF-00042",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-000546",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-01-16"
+ },
+ {
+  "conflict_id": "CNF-00043",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-000555",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-11-26"
+ },
+ {
+  "conflict_id": "CNF-00044",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-000558",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-12-21"
+ },
+ {
+  "conflict_id": "CNF-00045",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-000581",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-12-08"
+ },
+ {
+  "conflict_id": "CNF-00046",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-000623",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-12-16"
+ },
+ {
+  "conflict_id": "CNF-00047",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-000641",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-09-26"
+ },
+ {
+  "conflict_id": "CNF-00048",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-000653",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-01-21"
+ },
+ {
+  "conflict_id": "CNF-00049",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-000675",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-01-21"
+ },
+ {
+  "conflict_id": "CNF-00050",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-000681",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-05-06"
+ },
+ {
+  "conflict_id": "CNF-00051",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-000686",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-19"
+ },
+ {
+  "conflict_id": "CNF-00052",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-000730",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-10-31"
+ },
+ {
+  "conflict_id": "CNF-00053",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-000733",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-01-09"
+ },
+ {
+  "conflict_id": "CNF-00054",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-000741",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-04-07"
+ },
+ {
+  "conflict_id": "CNF-00055",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-000752",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-05"
+ },
+ {
+  "conflict_id": "CNF-00056",
+  "reviewer_id": "REV-0030",
+  "learner_id": "LRN-000777",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-01-16"
+ },
+ {
+  "conflict_id": "CNF-00057",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-000780",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-06-09"
+ },
+ {
+  "conflict_id": "CNF-00058",
+  "reviewer_id": "REV-0013",
+  "learner_id": "LRN-000781",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-04-23"
+ },
+ {
+  "conflict_id": "CNF-00059",
+  "reviewer_id": "REV-0026",
+  "learner_id": "LRN-000784",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-02-14"
+ },
+ {
+  "conflict_id": "CNF-00060",
+  "reviewer_id": "REV-0025",
+  "learner_id": "LRN-000803",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-11-05"
+ },
+ {
+  "conflict_id": "CNF-00061",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-000811",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-24"
+ },
+ {
+  "conflict_id": "CNF-00062",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-000826",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-07-08"
+ },
+ {
+  "conflict_id": "CNF-00063",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-000828",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-01-02"
+ },
+ {
+  "conflict_id": "CNF-00064",
+  "reviewer_id": "REV-0025",
+  "learner_id": "LRN-000830",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-09-09"
+ },
+ {
+  "conflict_id": "CNF-00065",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-000833",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-01-23"
+ },
+ {
+  "conflict_id": "CNF-00066",
+  "reviewer_id": "REV-0014",
+  "learner_id": "LRN-000847",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-10-09"
+ },
+ {
+  "conflict_id": "CNF-00067",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-000867",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-10-25"
+ },
+ {
+  "conflict_id": "CNF-00068",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-000876",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-11-16"
+ },
+ {
+  "conflict_id": "CNF-00069",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-000883",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-05-02"
+ },
+ {
+  "conflict_id": "CNF-00070",
+  "reviewer_id": "REV-0027",
+  "learner_id": "LRN-000905",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-12"
+ },
+ {
+  "conflict_id": "CNF-00071",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-000907",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-01-25"
+ },
+ {
+  "conflict_id": "CNF-00072",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-000912",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-05-10"
+ },
+ {
+  "conflict_id": "CNF-00073",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-000921",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-02-25"
+ },
+ {
+  "conflict_id": "CNF-00074",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-000939",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-09"
+ },
+ {
+  "conflict_id": "CNF-00075",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-000950",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-02-19"
+ },
+ {
+  "conflict_id": "CNF-00076",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-000969",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-01-18"
+ },
+ {
+  "conflict_id": "CNF-00077",
+  "reviewer_id": "REV-0026",
+  "learner_id": "LRN-000970",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-26"
+ },
+ {
+  "conflict_id": "CNF-00078",
+  "reviewer_id": "REV-0021",
+  "learner_id": "LRN-000979",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-09-09"
+ },
+ {
+  "conflict_id": "CNF-00079",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-000987",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-05-11"
+ },
+ {
+  "conflict_id": "CNF-00080",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-001018",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-11-11"
+ },
+ {
+  "conflict_id": "CNF-00081",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-001021",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-02-06"
+ },
+ {
+  "conflict_id": "CNF-00082",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-001044",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-03-25"
+ },
+ {
+  "conflict_id": "CNF-00083",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-001048",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-09-12"
+ },
+ {
+  "conflict_id": "CNF-00084",
+  "reviewer_id": "REV-0024",
+  "learner_id": "LRN-001110",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-09-05"
+ },
+ {
+  "conflict_id": "CNF-00085",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001135",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-02-10"
+ },
+ {
+  "conflict_id": "CNF-00086",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-001162",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-06-23"
+ },
+ {
+  "conflict_id": "CNF-00087",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-001172",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-08-18"
+ },
+ {
+  "conflict_id": "CNF-00088",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-001207",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-05"
+ },
+ {
+  "conflict_id": "CNF-00089",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-001215",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-04-02"
+ },
+ {
+  "conflict_id": "CNF-00090",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-001220",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-11-29"
+ },
+ {
+  "conflict_id": "CNF-00091",
+  "reviewer_id": "REV-0014",
+  "learner_id": "LRN-001222",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-02-27"
+ },
+ {
+  "conflict_id": "CNF-00092",
+  "reviewer_id": "REV-0021",
+  "learner_id": "LRN-001229",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-01-15"
+ },
+ {
+  "conflict_id": "CNF-00093",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-001239",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-03-24"
+ },
+ {
+  "conflict_id": "CNF-00094",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-001245",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-25"
+ },
+ {
+  "conflict_id": "CNF-00095",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-001247",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-04-01"
+ },
+ {
+  "conflict_id": "CNF-00096",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-001262",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-05-14"
+ },
+ {
+  "conflict_id": "CNF-00097",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001301",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-07-17"
+ },
+ {
+  "conflict_id": "CNF-00098",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-001312",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-06-24"
+ },
+ {
+  "conflict_id": "CNF-00099",
+  "reviewer_id": "REV-0013",
+  "learner_id": "LRN-001321",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-08-29"
+ },
+ {
+  "conflict_id": "CNF-00100",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-001325",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-11-28"
+ },
+ {
+  "conflict_id": "CNF-00101",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-001329",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-03-12"
+ },
+ {
+  "conflict_id": "CNF-00102",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-001332",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-08-30"
+ },
+ {
+  "conflict_id": "CNF-00103",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-001347",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-08-07"
+ },
+ {
+  "conflict_id": "CNF-00104",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-001361",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-04-07"
+ },
+ {
+  "conflict_id": "CNF-00105",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-001374",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-08-14"
+ },
+ {
+  "conflict_id": "CNF-00106",
+  "reviewer_id": "REV-0024",
+  "learner_id": "LRN-001377",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-05-02"
+ },
+ {
+  "conflict_id": "CNF-00107",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-001378",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-02-28"
+ },
+ {
+  "conflict_id": "CNF-00108",
+  "reviewer_id": "REV-0021",
+  "learner_id": "LRN-001380",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-09-16"
+ },
+ {
+  "conflict_id": "CNF-00109",
+  "reviewer_id": "REV-0022",
+  "learner_id": "LRN-001390",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-05-04"
+ },
+ {
+  "conflict_id": "CNF-00110",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-001403",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-01-28"
+ },
+ {
+  "conflict_id": "CNF-00111",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-001412",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-04-12"
+ },
+ {
+  "conflict_id": "CNF-00112",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-001415",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-02-22"
+ },
+ {
+  "conflict_id": "CNF-00113",
+  "reviewer_id": "REV-0024",
+  "learner_id": "LRN-001425",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-03-11"
+ },
+ {
+  "conflict_id": "CNF-00114",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-001462",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-05-22"
+ },
+ {
+  "conflict_id": "CNF-00115",
+  "reviewer_id": "REV-0022",
+  "learner_id": "LRN-001468",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-10-16"
+ },
+ {
+  "conflict_id": "CNF-00116",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-001495",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-05-15"
+ },
+ {
+  "conflict_id": "CNF-00117",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-001496",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-04-24"
+ },
+ {
+  "conflict_id": "CNF-00118",
+  "reviewer_id": "REV-0013",
+  "learner_id": "LRN-001523",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-03-18"
+ },
+ {
+  "conflict_id": "CNF-00119",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-001588",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-05-25"
+ },
+ {
+  "conflict_id": "CNF-00120",
+  "reviewer_id": "REV-0025",
+  "learner_id": "LRN-001590",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-01-26"
+ },
+ {
+  "conflict_id": "CNF-00121",
+  "reviewer_id": "REV-0021",
+  "learner_id": "LRN-001598",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-04-09"
+ },
+ {
+  "conflict_id": "CNF-00122",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001618",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-10-22"
+ },
+ {
+  "conflict_id": "CNF-00123",
+  "reviewer_id": "REV-0021",
+  "learner_id": "LRN-001637",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-07-07"
+ },
+ {
+  "conflict_id": "CNF-00124",
+  "reviewer_id": "REV-0030",
+  "learner_id": "LRN-001650",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-08-31"
+ },
+ {
+  "conflict_id": "CNF-00125",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-001695",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-08-25"
+ },
+ {
+  "conflict_id": "CNF-00126",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-001698",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-10-15"
+ },
+ {
+  "conflict_id": "CNF-00127",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-001704",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-12-23"
+ },
+ {
+  "conflict_id": "CNF-00128",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-001708",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-01-13"
+ },
+ {
+  "conflict_id": "CNF-00129",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-001709",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-03-19"
+ },
+ {
+  "conflict_id": "CNF-00130",
+  "reviewer_id": "REV-0030",
+  "learner_id": "LRN-001713",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-01-09"
+ },
+ {
+  "conflict_id": "CNF-00131",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-001718",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-05-24"
+ },
+ {
+  "conflict_id": "CNF-00132",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-001723",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-20"
+ },
+ {
+  "conflict_id": "CNF-00133",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-001738",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-02-19"
+ },
+ {
+  "conflict_id": "CNF-00134",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-001742",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-03-26"
+ },
+ {
+  "conflict_id": "CNF-00135",
+  "reviewer_id": "REV-0022",
+  "learner_id": "LRN-001748",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-03-09"
+ },
+ {
+  "conflict_id": "CNF-00136",
+  "reviewer_id": "REV-0024",
+  "learner_id": "LRN-001750",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-02-01"
+ },
+ {
+  "conflict_id": "CNF-00137",
+  "reviewer_id": "REV-0003",
+  "learner_id": "LRN-001753",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-12-31"
+ },
+ {
+  "conflict_id": "CNF-00138",
+  "reviewer_id": "REV-0027",
+  "learner_id": "LRN-001768",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-02-21"
+ },
+ {
+  "conflict_id": "CNF-00139",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-001773",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-08-16"
+ },
+ {
+  "conflict_id": "CNF-00140",
+  "reviewer_id": "REV-0010",
+  "learner_id": "LRN-001783",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-07-17"
+ },
+ {
+  "conflict_id": "CNF-00141",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-001791",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-06-24"
+ },
+ {
+  "conflict_id": "CNF-00142",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001801",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-02-24"
+ },
+ {
+  "conflict_id": "CNF-00143",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001816",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-11-14"
+ },
+ {
+  "conflict_id": "CNF-00144",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-001817",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-04"
+ },
+ {
+  "conflict_id": "CNF-00145",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-001834",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-12-13"
+ },
+ {
+  "conflict_id": "CNF-00146",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-001865",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-02-22"
+ },
+ {
+  "conflict_id": "CNF-00147",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-001868",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-03-19"
+ },
+ {
+  "conflict_id": "CNF-00148",
+  "reviewer_id": "REV-0025",
+  "learner_id": "LRN-001875",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-01-19"
+ },
+ {
+  "conflict_id": "CNF-00149",
+  "reviewer_id": "REV-0025",
+  "learner_id": "LRN-001877",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-03-29"
+ },
+ {
+  "conflict_id": "CNF-00150",
+  "reviewer_id": "REV-0010",
+  "learner_id": "LRN-001898",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-09-22"
+ },
+ {
+  "conflict_id": "CNF-00151",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-001910",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-05-15"
+ },
+ {
+  "conflict_id": "CNF-00152",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-001913",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-07-03"
+ },
+ {
+  "conflict_id": "CNF-00153",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001916",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-04-25"
+ },
+ {
+  "conflict_id": "CNF-00154",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-001927",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-06-03"
+ },
+ {
+  "conflict_id": "CNF-00155",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-001950",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-04-23"
+ },
+ {
+  "conflict_id": "CNF-00156",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-001960",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-04-09"
+ },
+ {
+  "conflict_id": "CNF-00157",
+  "reviewer_id": "REV-0023",
+  "learner_id": "LRN-001961",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-04-02"
+ },
+ {
+  "conflict_id": "CNF-00158",
+  "reviewer_id": "REV-0024",
+  "learner_id": "LRN-001966",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-13"
+ },
+ {
+  "conflict_id": "CNF-00159",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-001975",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-04-14"
+ },
+ {
+  "conflict_id": "CNF-00160",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-002001",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-02-01"
+ },
+ {
+  "conflict_id": "CNF-00161",
+  "reviewer_id": "REV-0010",
+  "learner_id": "LRN-002016",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-12-18"
+ },
+ {
+  "conflict_id": "CNF-00162",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-002084",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2026-03-23"
+ },
+ {
+  "conflict_id": "CNF-00163",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-002091",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-02-02"
+ },
+ {
+  "conflict_id": "CNF-00164",
+  "reviewer_id": "REV-0024",
+  "learner_id": "LRN-002097",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-06-09"
+ },
+ {
+  "conflict_id": "CNF-00165",
+  "reviewer_id": "REV-0012",
+  "learner_id": "LRN-002117",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-01-18"
+ },
+ {
+  "conflict_id": "CNF-00166",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-002123",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-04-20"
+ },
+ {
+  "conflict_id": "CNF-00167",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-002140",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-05-02"
+ },
+ {
+  "conflict_id": "CNF-00168",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-002159",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-02-14"
+ },
+ {
+  "conflict_id": "CNF-00169",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-002166",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-07-06"
+ },
+ {
+  "conflict_id": "CNF-00170",
+  "reviewer_id": "REV-0007",
+  "learner_id": "LRN-002169",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-01-23"
+ },
+ {
+  "conflict_id": "CNF-00171",
+  "reviewer_id": "REV-0016",
+  "learner_id": "LRN-002183",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-29"
+ },
+ {
+  "conflict_id": "CNF-00172",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-002185",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-01-20"
+ },
+ {
+  "conflict_id": "CNF-00173",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-002201",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-03-16"
+ },
+ {
+  "conflict_id": "CNF-00174",
+  "reviewer_id": "REV-0020",
+  "learner_id": "LRN-002219",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-11-30"
+ },
+ {
+  "conflict_id": "CNF-00175",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-002233",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-04-14"
+ },
+ {
+  "conflict_id": "CNF-00176",
+  "reviewer_id": "REV-0027",
+  "learner_id": "LRN-002238",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-01-10"
+ },
+ {
+  "conflict_id": "CNF-00177",
+  "reviewer_id": "REV-0015",
+  "learner_id": "LRN-002242",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-05-02"
+ },
+ {
+  "conflict_id": "CNF-00178",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-002250",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-11-27"
+ },
+ {
+  "conflict_id": "CNF-00179",
+  "reviewer_id": "REV-0004",
+  "learner_id": "LRN-002257",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-04-18"
+ },
+ {
+  "conflict_id": "CNF-00180",
+  "reviewer_id": "REV-0027",
+  "learner_id": "LRN-002264",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-09-25"
+ },
+ {
+  "conflict_id": "CNF-00181",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-002291",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-09-11"
+ },
+ {
+  "conflict_id": "CNF-00182",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-002315",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-13"
+ },
+ {
+  "conflict_id": "CNF-00183",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-002318",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-07-25"
+ },
+ {
+  "conflict_id": "CNF-00184",
+  "reviewer_id": "REV-0013",
+  "learner_id": "LRN-002323",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-07-08"
+ },
+ {
+  "conflict_id": "CNF-00185",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-002328",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-08-27"
+ },
+ {
+  "conflict_id": "CNF-00186",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-002334",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-01-24"
+ },
+ {
+  "conflict_id": "CNF-00187",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-002347",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-03-02"
+ },
+ {
+  "conflict_id": "CNF-00188",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-002375",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-06-08"
+ },
+ {
+  "conflict_id": "CNF-00189",
+  "reviewer_id": "REV-0010",
+  "learner_id": "LRN-002377",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-07-29"
+ },
+ {
+  "conflict_id": "CNF-00190",
+  "reviewer_id": "REV-0017",
+  "learner_id": "LRN-002386",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-06-22"
+ },
+ {
+  "conflict_id": "CNF-00191",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-002402",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-01-08"
+ },
+ {
+  "conflict_id": "CNF-00192",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-002412",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-14"
+ },
+ {
+  "conflict_id": "CNF-00193",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-002422",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-06-25"
+ },
+ {
+  "conflict_id": "CNF-00194",
+  "reviewer_id": "REV-0019",
+  "learner_id": "LRN-002427",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-08-15"
+ },
+ {
+  "conflict_id": "CNF-00195",
+  "reviewer_id": "REV-0002",
+  "learner_id": "LRN-002431",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-03-30"
+ },
+ {
+  "conflict_id": "CNF-00196",
+  "reviewer_id": "REV-0018",
+  "learner_id": "LRN-002461",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-03-27"
+ },
+ {
+  "conflict_id": "CNF-00197",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-002463",
+  "conflict_type": "family_relation",
+  "declared_at": "2026-04-07"
+ },
+ {
+  "conflict_id": "CNF-00198",
+  "reviewer_id": "REV-0005",
+  "learner_id": "LRN-002466",
+  "conflict_type": "same_project_group",
+  "declared_at": "2025-03-03"
+ },
+ {
+  "conflict_id": "CNF-00199",
+  "reviewer_id": "REV-0029",
+  "learner_id": "LRN-002475",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-10-07"
+ },
+ {
+  "conflict_id": "CNF-00200",
+  "reviewer_id": "REV-0001",
+  "learner_id": "LRN-002497",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2025-12-24"
+ },
+ {
+  "conflict_id": "CNF-00201",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-000401",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-11-11"
+ },
+ {
+  "conflict_id": "CNF-00202",
+  "reviewer_id": "REV-0009",
+  "learner_id": "LRN-000537",
+  "conflict_type": "family_relation",
+  "declared_at": "2025-03-10"
+ },
+ {
+  "conflict_id": "CNF-00203",
+  "reviewer_id": "REV-0013",
+  "learner_id": "LRN-000415",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-09-27"
+ },
+ {
+  "conflict_id": "CNF-00204",
+  "reviewer_id": "REV-0028",
+  "learner_id": "LRN-001552",
+  "conflict_type": "academic_supervisor",
+  "declared_at": "2026-01-07"
+ },
+ {
+  "conflict_id": "CNF-00205",
+  "reviewer_id": "REV-0006",
+  "learner_id": "LRN-002013",
+  "conflict_type": "same_project_group",
+  "declared_at": "2026-05-14"
+ },
+ {
+  "conflict_id": "CNF-00206",
+  "reviewer_id": "REV-0030",
+  "learner_id": "LRN-001930",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-10-16"
+ },
+ {
+  "conflict_id": "CNF-00207",
+  "reviewer_id": "REV-0008",
+  "learner_id": "LRN-001188",
+  "conflict_type": "prior_dispute",
+  "declared_at": "2025-09-25"
+ }
+]

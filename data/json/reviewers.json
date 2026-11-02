@@ -1,0 +1,344 @@
+[
+ {
+  "reviewer_id": "REV-0001",
+  "full_name": "Wei Fernandez",
+  "email": "wei.fernandez.rev-0001@example.edu",
+  "role": "instructor",
+  "department": "Business",
+  "active_from": "2023-02-19",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0002",
+  "full_name": "Sofia Martinez",
+  "email": "sofia.martinez.rev-0002@example.edu",
+  "role": "instructor",
+  "department": "Life Sciences",
+  "active_from": "2023-05-15",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0003",
+  "full_name": "Ananya Brown",
+  "email": "ananya.brown.rev-0003@example.edu",
+  "role": "instructor",
+  "department": "Life Sciences",
+  "active_from": "2023-04-20",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0004",
+  "full_name": "Noah Mehta",
+  "email": "noah.mehta.rev-0004@example.edu",
+  "role": "instructor",
+  "department": "Business",
+  "active_from": "2024-08-27",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0005",
+  "full_name": "Ivan Sharma",
+  "email": "ivan.sharma.rev-0005@example.edu",
+  "role": "instructor",
+  "department": "Engineering",
+  "active_from": "2023-05-25",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0006",
+  "full_name": "Tara Kim",
+  "email": "tara.kim.rev-0006@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2025-05-03",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0007",
+  "full_name": "Nisha Mehta",
+  "email": "nisha.mehta.rev-0007@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2024-07-30",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0008",
+  "full_name": "Lucas Rossi",
+  "email": "lucas.rossi.rev-0008@example.edu",
+  "role": "instructor",
+  "department": "Engineering",
+  "active_from": "2023-04-08",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0009",
+  "full_name": "Olivia Novak",
+  "email": "olivia.novak.rev-0009@example.edu",
+  "role": "instructor",
+  "department": "Humanities",
+  "active_from": "2023-04-02",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0010",
+  "full_name": "Fatima Laurent",
+  "email": "fatima.laurent.rev-0010@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2023-05-10",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0011",
+  "full_name": "Omar Bianchi",
+  "email": "omar.bianchi.rev-0011@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2025-06-08",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0012",
+  "full_name": "Kabir Park",
+  "email": "kabir.park.rev-0012@example.edu",
+  "role": "instructor",
+  "department": "Life Sciences",
+  "active_from": "2023-07-16",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0013",
+  "full_name": "Aarav Iyer",
+  "email": "aarav.iyer.rev-0013@example.edu",
+  "role": "instructor",
+  "department": "Business",
+  "active_from": "2024-08-05",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0014",
+  "full_name": "Chloe Muller",
+  "email": "chloe.muller.rev-0014@example.edu",
+  "role": "instructor",
+  "department": "Life Sciences",
+  "active_from": "2025-05-26",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0015",
+  "full_name": "Ananya Park",
+  "email": "ananya.park.rev-0015@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2025-01-15",
+  "active_to": "2026-06-05"
+ },
+ {
+  "reviewer_id": "REV-0016",
+  "full_name": "Pierre Nair",
+  "email": "pierre.nair.rev-0016@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2025-02-11",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0017",
+  "full_name": "Liam Sato",
+  "email": "liam.sato.rev-0017@example.edu",
+  "role": "instructor",
+  "department": "Life Sciences",
+  "active_from": "2025-01-25",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0018",
+  "full_name": "Greta Park",
+  "email": "greta.park.rev-0018@example.edu",
+  "role": "instructor",
+  "department": "Engineering",
+  "active_from": "2024-04-24",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0019",
+  "full_name": "Aarav Singh",
+  "email": "aarav.singh.rev-0019@example.edu",
+  "role": "instructor",
+  "department": "Life Sciences",
+  "active_from": "2024-08-27",
+  "active_to": "2026-05-14"
+ },
+ {
+  "reviewer_id": "REV-0020",
+  "full_name": "Ananya Nair",
+  "email": "ananya.nair.rev-0020@example.edu",
+  "role": "instructor",
+  "department": "Computer Science",
+  "active_from": "2024-01-31",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0021",
+  "full_name": "Hugo Adeyemi",
+  "email": "hugo.adeyemi.rev-0021@example.edu",
+  "role": "academic_administrator",
+  "department": "Humanities",
+  "active_from": "2025-01-16",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0022",
+  "full_name": "Hana Brown",
+  "email": "hana.brown.rev-0022@example.edu",
+  "role": "academic_administrator",
+  "department": "Engineering",
+  "active_from": "2024-10-18",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0023",
+  "full_name": "Dev Costa",
+  "email": "dev.costa.rev-0023@example.edu",
+  "role": "academic_administrator",
+  "department": "Life Sciences",
+  "active_from": "2025-01-12",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0024",
+  "full_name": "Greta Schmidt",
+  "email": "greta.schmidt.rev-0024@example.edu",
+  "role": "academic_administrator",
+  "department": "Engineering",
+  "active_from": "2023-11-20",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0025",
+  "full_name": "Hugo Nasser",
+  "email": "hugo.nasser.rev-0025@example.edu",
+  "role": "academic_administrator",
+  "department": "Life Sciences",
+  "active_from": "2025-04-17",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0026",
+  "full_name": "Sanjay Kim",
+  "email": "sanjay.kim.rev-0026@example.edu",
+  "role": "academic_administrator",
+  "department": "Engineering",
+  "active_from": "2023-07-02",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0027",
+  "full_name": "Nisha Rossi",
+  "email": "nisha.rossi.rev-0027@example.edu",
+  "role": "academic_administrator",
+  "department": "Life Sciences",
+  "active_from": "2023-10-26",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0028",
+  "full_name": "Ivan Mehta",
+  "email": "ivan.mehta.rev-0028@example.edu",
+  "role": "academic_administrator",
+  "department": "Computer Science",
+  "active_from": "2023-02-09",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0029",
+  "full_name": "Elena Fernandez",
+  "email": "elena.fernandez.rev-0029@example.edu",
+  "role": "academic_administrator",
+  "department": "Life Sciences",
+  "active_from": "2025-02-15",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0030",
+  "full_name": "Hugo Martinez",
+  "email": "hugo.martinez.rev-0030@example.edu",
+  "role": "academic_administrator",
+  "department": "Computer Science",
+  "active_from": "2025-03-25",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0031",
+  "full_name": "Chloe Novak",
+  "email": "chloe.novak.rev-0031@example.edu",
+  "role": "support_staff",
+  "department": "Life Sciences",
+  "active_from": "2023-06-01",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0032",
+  "full_name": "Nisha Muller",
+  "email": "nisha.muller.rev-0032@example.edu",
+  "role": "support_staff",
+  "department": "Business",
+  "active_from": "2024-08-03",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0033",
+  "full_name": "Meera Bose",
+  "email": "meera.bose.rev-0033@example.edu",
+  "role": "support_staff",
+  "department": "Humanities",
+  "active_from": "2024-05-29",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0034",
+  "full_name": "Sanjay Park",
+  "email": "sanjay.park.rev-0034@example.edu",
+  "role": "support_staff",
+  "department": "Computer Science",
+  "active_from": "2023-07-09",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0035",
+  "full_name": "Layla Wang",
+  "email": "layla.wang.rev-0035@example.edu",
+  "role": "support_staff",
+  "department": "Computer Science",
+  "active_from": "2023-11-17",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0036",
+  "full_name": "Vikram Bose",
+  "email": "vikram.bose.rev-0036@example.edu",
+  "role": "support_staff",
+  "department": "Business",
+  "active_from": "2023-01-12",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0037",
+  "full_name": "Amara Kim",
+  "email": "amara.kim.rev-0037@example.edu",
+  "role": "platform_administrator",
+  "department": "Humanities",
+  "active_from": "2024-09-10",
+  "active_to": null
+ },
+ {
+  "reviewer_id": "REV-0038",
+  "full_name": "Jonas Laurent",
+  "email": "jonas.laurent.rev-0038@example.edu",
+  "role": "platform_administrator",
+  "department": "Computer Science",
+  "active_from": "2024-10-01",
+  "active_to": null
+ }
+]

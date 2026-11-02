@@ -1,0 +1,1049 @@
+{
+  "structural_checks": 112,
+  "structural_failed": 0,
+  "process_checks": 5,
+  "process_failed": 0,
+  "detectors": {
+    "flag_auto_guilt": {
+      "labelled": 8,
+      "detected": 8,
+      "true_pos": 8,
+      "false_pos": [],
+      "false_neg": [],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "reviewer_conflict": {
+      "labelled": 8,
+      "detected": 8,
+      "true_pos": 8,
+      "false_pos": [],
+      "false_neg": [],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "evidence_added_after_decision_no_history": {
+      "labelled": 8,
+      "detected": 8,
+      "true_pos": 8,
+      "false_pos": [],
+      "false_neg": [],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "appeal_closed_without_independent_review": {
+      "labelled": 6,
+      "detected": 6,
+      "true_pos": 6,
+      "false_pos": [],
+      "false_neg": [],
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "distributions": {
+    "submissions": 10000,
+    "current_reports": 10000,
+    "flags": 1000,
+    "cases": 300,
+    "flag_rate": 0.1,
+    "flags_by_action": {
+      "standard_review": 750,
+      "priority_review": 170,
+      "panel_escalation": 80
+    },
+    "boundary_scores": {
+      "at_0_25": 27,
+      "at_0_50": 6,
+      "at_0_75": 1,
+      "just_below_0_25": 220
+    },
+    "raw_high_but_not_flagged": 508,
+    "case_status": {
+      "closed": 290,
+      "decided": 6,
+      "appealed": 2,
+      "appeal_under_review": 1,
+      "under_review": 1
+    },
+    "case_final_outcome": {
+      "minor_violation_warning": 129,
+      "false_positive_dismissed": 50,
+      "permitted_shared_template": 8,
+      "permitted_quotation": 43,
+      "major_violation_penalty": 58,
+      "no_violation_insufficient_evidence": 11,
+      "undecided": 1
+    },
+    "cases_with_multiple_reviewers": 245,
+    "cases_with_tiebreak": 26,
+    "appeals": {
+      "upheld": 31,
+      "reduced": 4,
+      "overturned": 5,
+      "withdrawn": 3,
+      "pending": 3
+    },
+    "successful_appeals": 9,
+    "sla_breached_cases": 14,
+    "latent_class_of_flags": {
+      "legit_quote": 206,
+      "false_positive": 429,
+      "shared_template": 109,
+      "genuine": 256
+    },
+    "cases_whose_final_outcome_differs_from_expected": 20
+  },
+  "checks": [
+    {
+      "group": "A",
+      "check": "reviewers: types parse",
+      "failures": 0,
+      "examined": 38,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewers: required fields present",
+      "failures": 0,
+      "examined": 38,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewers: enum values allowed",
+      "failures": 0,
+      "examined": 38,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewers: ID pattern",
+      "failures": 0,
+      "examined": 38,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewers: primary key unique",
+      "failures": 0,
+      "examined": 38,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewers.email: unique",
+      "failures": 0,
+      "examined": 38,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "learners: types parse",
+      "failures": 0,
+      "examined": 2500,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "learners: required fields present",
+      "failures": 0,
+      "examined": 2500,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "learners: enum values allowed",
+      "failures": 0,
+      "examined": 2500,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "learners: ID pattern",
+      "failures": 0,
+      "examined": 2500,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "learners: primary key unique",
+      "failures": 0,
+      "examined": 2500,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "learners.email: unique",
+      "failures": 0,
+      "examined": 2500,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewer_conflicts: types parse",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewer_conflicts: required fields present",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewer_conflicts: enum values allowed",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewer_conflicts: ID pattern",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewer_conflicts: primary key unique",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "reviewer_conflicts: unique ['reviewer_id', 'learner_id']",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "assessments: types parse",
+      "failures": 0,
+      "examined": 160,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "assessments: required fields present",
+      "failures": 0,
+      "examined": 160,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "assessments: enum values allowed",
+      "failures": 0,
+      "examined": 160,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "assessments: ID pattern",
+      "failures": 0,
+      "examined": 160,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "assessments: primary key unique",
+      "failures": 0,
+      "examined": 160,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "integrity_rules: types parse",
+      "failures": 0,
+      "examined": 9,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "integrity_rules: required fields present",
+      "failures": 0,
+      "examined": 9,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "integrity_rules: enum values allowed",
+      "failures": 0,
+      "examined": 9,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "integrity_rules: ID pattern",
+      "failures": 0,
+      "examined": 9,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "integrity_rules: primary key unique",
+      "failures": 0,
+      "examined": 9,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submissions: types parse",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submissions: required fields present",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submissions: enum values allowed",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submissions: ID pattern",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submissions: primary key unique",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submissions: unique ['learner_id', 'assessment_id']",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_reports: types parse",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_reports: required fields present",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_reports: enum values allowed",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_reports: ID pattern",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_reports: primary key unique",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_reports: unique ['submission_id', 'report_version']",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "cases: types parse",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "cases: required fields present",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "cases: enum values allowed",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "cases: ID pattern",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "cases: primary key unique",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "cases.similarity_id: unique",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case_reviewers: types parse",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case_reviewers: required fields present",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case_reviewers: enum values allowed",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case_reviewers: ID pattern",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case_reviewers: primary key unique",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case_reviewers: unique ['case_id', 'reviewer_id']",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "evidence_items: types parse",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "evidence_items: required fields present",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "evidence_items: enum values allowed",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "evidence_items: ID pattern",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "evidence_items: primary key unique",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "decisions: types parse",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "decisions: required fields present",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "decisions: enum values allowed",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "decisions: ID pattern",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "decisions: primary key unique",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals: types parse",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals: required fields present",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals: enum values allowed",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals: ID pattern",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals: primary key unique",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals.case_id: unique",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "state_events: types parse",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "state_events: required fields present",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "state_events: enum values allowed",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "state_events: ID pattern",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "state_events: primary key unique",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK reviewer_conflicts.reviewer_id -> reviewers.reviewer_id",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK reviewer_conflicts.learner_id -> learners.learner_id",
+      "failures": 0,
+      "examined": 207,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK assessments.instructor_id -> reviewers.reviewer_id",
+      "failures": 0,
+      "examined": 160,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK integrity_rules.created_by -> reviewers.reviewer_id",
+      "failures": 0,
+      "examined": 9,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK submissions.learner_id -> learners.learner_id",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK submissions.assessment_id -> assessments.assessment_id",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK similarity_reports.submission_id -> submissions.submission_id",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK similarity_reports.rule_id -> integrity_rules.rule_id",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK cases.similarity_id -> similarity_reports.similarity_id",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK cases.submission_id -> submissions.submission_id",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK cases.opened_by_rule_id -> integrity_rules.rule_id",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK case_reviewers.case_id -> cases.case_id",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK case_reviewers.reviewer_id -> reviewers.reviewer_id",
+      "failures": 0,
+      "examined": 641,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK evidence_items.case_id -> cases.case_id",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK decisions.case_id -> cases.case_id",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK decisions.decided_by -> reviewers.reviewer_id",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK decisions.supersedes_decision_id -> decisions.decision_id",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK appeals.case_id -> cases.case_id",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK appeals.original_decision_id -> decisions.decision_id",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK appeals.filed_by_learner_id -> learners.learner_id",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK appeals.appeal_reviewer_id -> reviewers.reviewer_id",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK appeals.resulting_decision_id -> decisions.decision_id",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK state_events.entity_id by entity_type",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK state_events.actor_id by actor_type",
+      "failures": 0,
+      "examined": 14883,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "FK evidence_items.added_by_actor_id by added_by_actor_type",
+      "failures": 0,
+      "examined": 1032,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "date ordering and snapshot cut-off",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "adjusted_score = raw - quoted - template",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "rule_id/action/flagged follow thresholds effective at scan date",
+      "failures": 0,
+      "examined": 10173,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "exactly one current report per submission",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "no rule permits automatic guilt",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "similarity_id = SIM-<submission_id>-<version>",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "evidence/decision/appeal IDs embed their case ID",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "case derived fields reconcile to source rows",
+      "failures": 0,
+      "examined": 300,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "decisions: rationale present, votes/evidence counts reconcile, one initial per case",
+      "failures": 0,
+      "examined": 308,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "appeals reference adverse decisions of the same case; outcomes have decisions",
+      "failures": 0,
+      "examined": 46,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "submission.integrity_status derived consistently",
+      "failures": 0,
+      "examined": 10000,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "audit history complete: creation/filing/decision events exist and match record timestamps",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "SQL seed loads; PRAGMA foreign_key_check clean",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "A",
+      "check": "SQL row counts equal CSV row counts",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "B",
+      "check": "lifecycle: all transitions allowed (illegal ones listed)",
+      "failures": 10,
+      "examined": 11543,
+      "passed": false,
+      "examples": [
+        "CSE-2026-000001:['Case:opened->decided']",
+        "CSE-2026-000008:['Case:opened->decided']",
+        "CSE-2026-000041:['Case:opened->decided']",
+        "CSE-2026-000049:['Case:opened->decided']",
+        "CSE-2026-000067:['Case:opened->decided']"
+      ]
+    },
+    {
+      "group": "B",
+      "check": "detector 'flag_auto_guilt': no unexplained findings, no missed labels",
+      "failures": 0,
+      "examined": 8,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "B",
+      "check": "detector 'reviewer_conflict': no unexplained findings, no missed labels",
+      "failures": 0,
+      "examined": 8,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "B",
+      "check": "detector 'evidence_added_after_decision_no_history': no unexplained findings, no missed labels",
+      "failures": 0,
+      "examined": 8,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "B",
+      "check": "detector 'appeal_closed_without_independent_review': no unexplained findings, no missed labels",
+      "failures": 0,
+      "examined": 6,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "group": "B",
+      "check": "every illegal lifecycle transition belongs to a labelled anomaly",
+      "failures": 0,
+      "examined": null,
+      "passed": true,
+      "examples": []
+    }
+  ]
+}

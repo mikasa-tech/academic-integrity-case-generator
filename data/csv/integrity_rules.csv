@@ -1,0 +1,10 @@
+rule_id,rule_name,rule_type,action,min_adjusted_score,max_adjusted_score,reviewers_required,parameter_value,effective_from,effective_to,created_by,auto_guilt_permitted,description
+INT-2026-000001,Below review threshold,threshold,no_action,0.0000,0.2500,,,2026-01-01,,REV-0037,false,Adjusted score under 25%: no action; the report is retained for audit.
+INT-2026-000002,Standard review,threshold,standard_review,0.2500,0.5000,1,,2026-01-01,,REV-0037,false,25-49%: flagged for triage. A reviewer decides whether to refer to a case. Never automatic guilt.
+INT-2026-000003,Priority review,threshold,priority_review,0.5000,0.7500,2,,2026-01-01,,REV-0037,false,50-74%: a case is opened and two reviewers must assess independently; a third breaks ties.
+INT-2026-000004,Panel escalation,threshold,panel_escalation,0.7500,1.0000,3,,2026-01-01,,REV-0037,false,75%+: a case is opened and a three-member panel decides by majority.
+INT-2026-000005,Exclude quoted material,exclusion,exclude_from_score,,,,,2026-01-01,,REV-0037,false,Properly quoted and cited passages are subtracted from the raw score.
+INT-2026-000006,Exclude shared template,exclusion,exclude_from_score,,,,,2026-01-01,,REV-0037,false,Text copied from the shared assessment template is subtracted from the raw score.
+INT-2026-000007,Appeal window,procedural,procedural_control,,,,14.0000,2026-01-01,,REV-0037,false,A learner may appeal an adverse decision within 14 days; cases close when the window lapses.
+INT-2026-000008,Independent appeal review,procedural,procedural_control,,,1,,2026-01-01,,REV-0037,false,Appeals are reviewed by an administrator who sat on neither the case nor has a declared conflict.
+INT-2026-000009,Legacy standard review (superseded),threshold,standard_review,0.3000,0.5000,1,,2025-01-01,2025-12-31,REV-0037,false,Pre-2026 threshold of 30%; superseded by INT-2026-000002.

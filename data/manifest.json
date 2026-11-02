@@ -1,0 +1,26 @@
+{
+  "generator": "src/generate.py",
+  "seed": 20261022,
+  "scale": 1.0,
+  "command": "python src/generate.py --seed 20261022 --scale 1.0 --out data",
+  "snapshot_date": "2026-10-31T23:59:59",
+  "row_counts": {
+    "reviewers": 38,
+    "learners": 2500,
+    "reviewer_conflicts": 207,
+    "assessments": 160,
+    "integrity_rules": 9,
+    "submissions": 10000,
+    "similarity_reports": 10173,
+    "cases": 300,
+    "case_reviewers": 641,
+    "evidence_items": 1032,
+    "decisions": 308,
+    "appeals": 46,
+    "state_events": 14883
+  },
+  "external_sources": [],
+  "external_data_used": false,
+  "provenance": "All records are procedurally generated from a seeded PRNG. No external dataset, scraped content or personal data is used. Names are random combinations from a built-in list of common given names and surnames; emails use the reserved example.edu domain.",
+  "schema_inspiration": "Generic similarity-report / case-management concepts only; no vendor schema copied."
+}
