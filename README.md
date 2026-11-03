@@ -6,6 +6,7 @@ supporting tables), derives every outcome from documented rules, injects four **
 itself, and proves it is reproducible.
 
 > Default run: **10,000 submissions, 1,000 flags, 300 cases**, seed `20261022`. Python 3 (tested on 3.12), **standard library only**.
+> **Start here:** [`docs/WALKTHROUGH.md`](docs/WALKTHROUGH.md) explains the project end to end and includes a demo script. AI use and prompt history: [`docs/AI_USE.md`](docs/AI_USE.md) and [`prompts/PROMPT_LOG.md`](prompts/PROMPT_LOG.md).
 
 ## Quick start
 
@@ -128,13 +129,14 @@ auto-guilt cases and 2 benign overlaps wrongly sanctioned.
 ## Layout
 
 ```
-src/schema.py        data model: drives DDL, dictionary and validator
-src/rules.py         thresholds, probabilities, rule lookup, rationale text
-src/generate.py      generator + anomaly injection + exports
-src/validate.py      structural checks, lifecycle, detectors, ground-truth scoring
-src/repro_check.py   fixed-seed reproducibility proof
-dashboard/           template.html + generated index.html (visual demo)
+src/schema.py           data model: drives DDL, dictionary and validator
+src/rules.py            probabilities, band ranges, rule lookup, rationale text
+src/generate.py         generator, rule table, anomaly injection, exports
+src/validate.py         structural checks, lifecycle, detectors, ground-truth scoring
+src/repro_check.py      fixed-seed reproducibility proof
 src/build_dashboard.py  embeds the dataset into the dashboard
-docs/                dictionary, validation + reproducibility reports, AI_USE.md
-prompts/PROMPT_LOG.md
+dashboard/              template.html + generated index.html (visual demo)
+data/                   generated CSV/JSON/SQL, ground_truth/, manifest, checksums
+docs/                   data dictionary, validation + reproducibility reports, WALKTHROUGH, AI_USE
+prompts/PROMPT_LOG.md   prompts sent to AI tools
 ```
