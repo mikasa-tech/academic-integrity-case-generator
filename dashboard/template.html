@@ -610,7 +610,7 @@
           $("#outs").append(
             E(
               "div",
-              `<span>${nice(k)}</span><i style="width:${v * 2.2}px;background:${/violation/.test(k) ? "var(--rose)" : "var(--teal)"}"></i><b>${v}</b>`,
+              `<span>${nice(k)}</span><i style="width:${v * 2.2}px;background:${/^(minor|major)_violation/.test(k) ? "var(--rose)" : "var(--teal)"}"></i><b>${v}</b>`,
               "bar",
             ),
           ),
@@ -662,7 +662,7 @@
           (f) =>
             (h += `<div class="find"><b>Audit finding:</b> ${nice(f)}. Raised by the validator from the data alone.</div>`),
         );
-        h += `<span class="pill ${/violation/.test(c.outcome) ? "bad" : "ok"}">${nice(c.outcome || "undecided")}</span><span class="pill">${nice(c.status)}</span>${c.sla ? '<span class="pill warn">SLA breached</span>' : ""}`;
+        h += `<span class="pill ${/^(minor|major)_violation/.test(c.outcome) ? "bad" : "ok"}">${nice(c.outcome || "undecided")}</span><span class="pill">${nice(c.status)}</span>${c.sla ? '<span class="pill warn">SLA breached</span>' : ""}`;
         c.dec.forEach(
           (d) =>
             (h += `<h3>${d[0] === "initial" ? "Decision" : "Appeal decision"}</h3><p style="margin:0">${esc(d[2])}</p><small style="color:var(--mute)">${d[3].slice(0, 16).replace("T", " ")} · basis: ${nice(d[4])}</small>`),
