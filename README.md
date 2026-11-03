@@ -86,6 +86,9 @@ Double-click `dashboard/index.html`. Three views: **Threshold lab** (slide the r
 are flagged on raw similarity versus after quote/template exclusions), **Case explorer** (300 cases with timelines, reviewers,
 evidence, decisions, appeals), **Audit findings** (the four detectors, with a button to reveal the ground-truth answer key and
 compare). The page embeds the generated data; findings shown in the explorer come from the validator, not from ground truth.
+![Threshold lab: flags on raw score vs after exclusions](docs/img/01-threshold-lab.png)
+![Case explorer: timeline, reviewers, evidence, decision](docs/img/02-case-explorer.png)
+![Audit findings: detectors vs answer key](docs/img/03-audit-findings.png)
 
 ## Labelled anomalies (`data/ground_truth/`)
 
