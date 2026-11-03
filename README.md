@@ -84,8 +84,6 @@ The generator follows a seven-stage pipeline:
 Workflow changes are represented through timestamped events so that the audit history is retained rather than relying only on the latest status.
 
 ---
-*Note: This diagram presents the primary entity relationships.
-Supporting tables and detailed attributes are documented in the data dictionary.* 
 
 ## 3. Database design
 
@@ -110,6 +108,8 @@ erDiagram
     CASE ||--o{ STATE_EVENT : records
 ```
 
+*Note: This diagram presents the primary entity relationships.
+Supporting tables and detailed attributes are documented in the data dictionary.* 
 The model uses:
 
 - Primary and foreign keys to maintain relational integrity.
