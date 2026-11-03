@@ -84,6 +84,8 @@ The generator follows a seven-stage pipeline:
 Workflow changes are represented through timestamped events so that the audit history is retained rather than relying only on the latest status.
 
 ---
+*Note: This diagram presents the primary entity relationships.
+Supporting tables and detailed attributes are documented in the data dictionary.* 
 
 ## 3. Database design
 
@@ -293,7 +295,7 @@ This project is a synthetic workflow and data-generation exercise, not a product
 
 ## 10. AI-use disclosure
 
-AI-assisted development was used during implementation. The AI-use disclosure documents which parts were generated with AI, the work performed to verify the implementation, engineering decisions, and known limitations.
+AI-assisted development was used extensively, including code generation and implementation design. The accompanying disclosure documents the AI-generated components, my verification activities, engineering decisions and known limitations.
 
 - [AI use disclosure](docs/AI_USE.md)
 - [Prompt history](prompts/PROMPT_LOG.md)
