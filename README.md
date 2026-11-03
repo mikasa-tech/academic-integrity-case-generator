@@ -1,145 +1,307 @@
-# Academic-integrity case management: synthetic dataset generator
+# Academic Integrity Case Management — Synthetic Dataset Generator
 
-Seeded, reproducible generator for the YottaFlex AI challenge _"Manage similarity flags, evidence, reviewer
-assignment, case timelines and appeal outcomes with due process."_ It builds 10 related entities (plus 3
-supporting tables), derives every outcome from documented rules, injects four **labelled** anomalies, validates
-itself, and proves it is reproducible.
+A deterministic, rule-driven synthetic data generator for an academic integrity case-management workflow.
 
-> Default run: **10,000 submissions, 1,000 flags, 300 cases**, seed `20261022`. Python 3 (tested on 3.12), **standard library only**.
-> **Start here:** [`docs/WALKTHROUGH.md`](docs/WALKTHROUGH.md) explains the project end to end and includes a demo script. AI use and prompt history: [`docs/AI_USE.md`](docs/AI_USE.md) and [`prompts/PROMPT_LOG.md`](prompts/PROMPT_LOG.md).
+Built for the YottaFlex AI challenge: **Manage similarity flags, evidence, reviewer assignment, case timelines and appeal outcomes with due process.**
 
-## Quick start
+The project models the workflow from submission and similarity reporting through human review, evidence collection, decisions, appeals and case closure. It generates relational datasets, injects labelled process anomalies, validates data integrity and checks reproducibility.
+
+### Project at a glance
+
+| Metric | Default output |
+|---|---:|
+| Submissions | 10,000 |
+| Similarity flags | 1,000 |
+| Integrity cases | 300 |
+| Labelled anomaly categories | 4 |
+| Structural validation checks | 112 |
+| Process validation checks | 5 |
+
+- **Language:** Python
+- **Database:** SQLite-compatible SQL
+- **Dependencies:** Python standard library only
+- **Generation:** Seeded and reproducible
+- **Dashboard:** Static HTML, works offline
+
+---
+
+## 1. Quick start
+
+### Requirements
+
+- Python 3.11 or later
+- No external packages, API keys or network connection required
+
+### Generate the dataset
 
 ```bash
-python src/generate.py --seed 20261022 --scale 1.0 --out data   # full dataset (a few seconds)
-python src/validate.py --data data                               # 117 checks, exit 0 = all good
-python src/repro_check.py                                        # regenerate twice, compare checksums
-python src/generate.py --scale 0.1 --out starter --no-docs       # starter set: 1,000 / 100 / 30, same generator
+python src/generate.py --seed 20261022 --scale 1.0 --out data
 ```
 
-No install step, no network, no API keys. Outputs: `data/csv`, `data/json`, `data/sql/{schema,seed}.sql`
-(SQLite-compatible), `data/ground_truth/` (separate), `data/manifest.json`, `data/checksums.sha256`;
-docs in `docs/` (`data_dictionary.md`, `validation_summary.md/json`, `reproducibility_report.md`).
+### Validate the generated data
 
-## How the data is built (and why)
+```bash
+python src/validate.py --data data
+```
 
-| Step          | What happens                                                                                                                                                                                                                        |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 Master data | reviewers (4 roles), learners, conflict-of-interest registry, assessments (30% use a shared template), `integrity_rules`                                                                                                            |
-| 2 Submissions | unique learner x assessment pairs; timestamps cluster before the due date, 7% late                                                                                                                                                  |
-| 3 Similarity  | every submission gets a report. 1,000 are chosen to be flagged (template assessments weighted 1.5x). Each flag gets a **latent cause**: `genuine`, `legit_quote`, `shared_template` or `false_positive`                             |
-| 4 Cases       | opened by rule; reviewers assigned with conflict checks; evidence, votes, decisions, appeals, closure simulated as **time-ordered events**; anything after the snapshot (2026-10-31) is cut, so some cases are genuinely still open |
-| 5 Anomalies   | injected **after** the clean baseline, only into targeted cases, each recorded in ground truth                                                                                                                                      |
-| 6 Derivation  | counts, statuses, SLA flags, `integrity_status`, votes, evidence-at-decision are recomputed from source rows                                                                                                                        |
-| 7 Export      | CSV / JSON / SQL / ground truth / dictionary / manifest / checksums                                                                                                                                                                 |
+A successful run should report:
 
-### Rules, not dice
+- 112/112 structural checks passed
+- 5/5 process checks passed
 
-- `integrity_rules` holds transparent bands on the **adjusted** score (raw minus detected quoted and shared-template text):
-  `<0.25` no action, `0.25-0.50` standard review, `0.50-0.75` priority (2 reviewers), `>=0.75` panel (3). Lower bound inclusive.
-  `auto_guilt_permitted` is `false` on every rule; a threshold only decides _how much human review_ happens.
-- Reviewers vote independently, accuracy 90% when misconduct is real, 85% when overlap is benign (high scores bias
-  reviewers). Majority decides; a 1-1 split between two reviewers adds a tiebreak reviewer. Severity (warning vs penalty)
-  is a function of the adjusted score.
-- Adverse decisions can be appealed within 14 days: P=0.80 if the learner was wrongly accused, 0.22 if guilty. An
-  independent administrator (not on the case, no conflict) reaches the right conclusion 92% of the time. Overturning adds a
-  **new** decision row that supersedes the old one; nothing is overwritten.
-- Ground truth = the latent cause -> `expected_outcome`. Reviewer/appeal error rates are the only randomness between
-  cause and outcome, which is why some wrongly-accused learners exist and some appeals succeed.
-- The case count is pinned to the brief: all priority/escalation flags open a case (250) and 50 standard-review flags are
-  referred by triage (300). That pin is a deliberate simplification; see Limitations.
+### Verify reproducibility
 
-### Entities and cardinality
+```bash
+python src/repro_check.py
+```
+
+This regenerates the data using the same seed and compares normalized output checksums. It also checks that a different seed produces different output.
+
+### Generate a smaller starter dataset
+
+```bash
+python src/generate.py --scale 0.1 --out starter --no-docs
+```
+
+This generates a smaller dataset using the same generation logic.
+
+---
+
+## 2. System workflow
+
+The generator follows a seven-stage pipeline:
+
+| Stage | Description |
+|---|---|
+| 1. Master data | Generates learners, reviewers, assessments, conflict-of-interest records and integrity rules |
+| 2. Submissions | Creates learner submissions with timestamps and assessment relationships |
+| 3. Similarity reports | Generates similarity scores, applies exclusions and identifies flags |
+| 4. Case management | Simulates triage, reviewer assignment, evidence, decisions, appeals and closure |
+| 5. Anomaly injection | Introduces four deliberately labelled process anomalies |
+| 6. Derivation | Recomputes statuses, counts, outcomes and other derived fields |
+| 7. Export | Produces CSV, JSON, SQL, ground-truth data, documentation and checksums |
+
+Workflow changes are represented through timestamped events so that the audit history is retained rather than relying only on the latest status.
+
+---
+
+## 3. Database design
+
+The data model contains 10 primary business entities and 3 supporting tables.
+
+The supporting tables include bridge relationships and event history.
 
 ```mermaid
 erDiagram
-  LEARNER ||--o{ SUBMISSION : submits
-  ASSESSMENT ||--o{ SUBMISSION : receives
-  SUBMISSION ||--|{ SIMILARITY_REPORT : "scanned (1..n versions)"
-  INTEGRITY_RULE ||--o{ SIMILARITY_REPORT : "applied to"
-  SIMILARITY_REPORT |o--o| CASE : "opens (0..1)"
-  CASE ||--|{ CASE_REVIEWER : has
-  REVIEWER ||--o{ CASE_REVIEWER : "assigned (N:M bridge)"
-  REVIEWER }o--o{ LEARNER : "REVIEWER_CONFLICT (N:M bridge)"
-  CASE ||--o{ EVIDENCE_ITEM : holds
-  CASE ||--|{ DECISION : "initial + optional appeal-stage"
-  DECISION ||--o| APPEAL : "adverse decision appealed (0..1 per case)"
-  APPEAL }o--o| REVIEWER : "independent reviewer"
-  CASE ||--o{ STATE_EVENT : "audit trail (also flags, evidence, appeals)"
+    LEARNER ||--o{ SUBMISSION : submits
+    ASSESSMENT ||--o{ SUBMISSION : receives
+    SUBMISSION ||--|{ SIMILARITY_REPORT : scanned
+    INTEGRITY_RULE ||--o{ SIMILARITY_REPORT : applied_to
+    SIMILARITY_REPORT |o--o| CASE : opens
+    CASE ||--|{ CASE_REVIEWER : has
+    REVIEWER ||--o{ CASE_REVIEWER : assigned
+    REVIEWER }o--o{ LEARNER : reviewer_conflict
+    CASE ||--o{ EVIDENCE_ITEM : holds
+    CASE ||--|{ DECISION : has
+    DECISION ||--o| APPEAL : appealed_by
+    APPEAL }o--o| REVIEWER : independent_reviewer
+    CASE ||--o{ STATE_EVENT : records
 ```
 
-Lifecycles: report `generated -> flagged -> triaged_closed | case_opened`; case `opened -> assigned -> under_review ->
-decided -> closed | appealed -> appeal_under_review -> closed` (an appeal withdrawal goes `appealed -> closed`);
-appeal `filed -> under_review -> resolved | withdrawn`. Rules carry `effective_from/to`; a superseded 2025 rule exists so
-effective-dating is exercised. Full field-level spec: [`docs/data_dictionary.md`](docs/data_dictionary.md).
+The model uses:
 
-IDs: `SUB-2026-000001`, `SIM-<submission-id>-01`, `INT-2026-000001`, `EVD-<case-id>-001`, `APL-<case-id>-01`; supporting
-IDs follow the same style (`CSE-2026-000001`, `DEC-<case-id>-01`, `CRV-000001`, `EVT-0000001`). All are zero-padded and immutable.
+- Primary and foreign keys to maintain relational integrity.
+- Bridge tables for many-to-many relationships.
+- Effective-dated integrity rules.
+- Explicit lifecycle states.
+- Append-only state events for auditability.
+- Separate ground-truth records for anomaly evaluation.
 
-## Dashboard (optional visual demo)
+Full field definitions and relationships are documented in [`docs/data_dictionary.md`](docs/data_dictionary.md).
+
+---
+
+## 4. Rule-driven decision workflow
+
+The system uses documented rules rather than assigning outcomes independently at random.
+
+### Similarity thresholds
+
+Similarity scores are adjusted by excluding detected quoted and shared-template content.
+
+| Adjusted score | Review level |
+|---|---|
+| Below 0.25 | No action |
+| 0.25 to below 0.50 | Standard review |
+| 0.50 to below 0.75 | Priority review — 2 reviewers |
+| 0.75 and above | Panel review — 3 reviewers |
+
+**A similarity threshold never establishes guilt automatically.** Every integrity rule has `auto_guilt_permitted = false`.
+
+### Reviewer decisions
+
+- Reviewers evaluate cases independently.
+- The synthetic model uses assumed reviewer accuracy rates of 90% for genuine misconduct and 85% for benign overlap.
+- Majority voting determines the outcome.
+- A 1–1 split between two reviewers triggers a tiebreak reviewer.
+- Decision severity is derived from the adjusted similarity score.
+
+These probabilities are synthetic modelling assumptions, not measured institutional statistics.
+
+### Appeals
+
+- Adverse decisions can be appealed within 14 days.
+- Appeals are evaluated by an independent administrator who was not involved in the original case and has no recorded conflict.
+- Appeal outcomes follow the documented synthetic decision rules.
+- An overturned or modified decision creates a new decision record; the original decision is retained.
+
+---
+
+## 5. Labelled process anomalies
+
+Four anomaly categories are deliberately injected into the generated dataset.
+
+| Anomaly | Description |
+|---|---|
+| `flag_auto_guilt` | A decision is made from a similarity score without the required human review |
+| `reviewer_conflict` | A reviewer with a recorded conflict is assigned to a case |
+| `evidence_added_after_decision_no_history` | Evidence is added after a decision without a corresponding audit event |
+| `appeal_closed_without_independent_review` | An appeal is resolved without an eligible independent reviewer |
+
+The validator checks for these patterns and compares the detected records against separately stored ground-truth labels.
+
+At full scale, the generated dataset contains 8, 8, 8 and 6 labelled cases respectively.
+
+**Ground truth is kept separate from the generated input records.** The generator does not use ground-truth labels to perform anomaly detection; the validator uses them to evaluate the detectors.
+
+---
+
+## 6. Dashboard
+
+The project includes a static HTML dashboard for exploring the generated data and validation findings.
+
+Generate it with:
 
 ```bash
-python src/build_dashboard.py --data data     # writes dashboard/index.html (one file, ~0.7 MB, works offline)
+python src/build_dashboard.py --data data
 ```
 
-Double-click `dashboard/index.html`. Three views: **Threshold lab** (slide the review threshold and see how many submissions
-are flagged on raw similarity versus after quote/template exclusions), **Case explorer** (300 cases with timelines, reviewers,
-evidence, decisions, appeals), **Audit findings** (the four detectors, with a button to reveal the ground-truth answer key and
-compare). The page embeds the generated data; findings shown in the explorer come from the validator, not from ground truth.
-![Threshold lab: flags on raw score vs after exclusions](docs/img/01-threshold-lab.png)
-![Case explorer: timeline, reviewers, evidence, decision](docs/img/02-case-explorer.png)
-![Audit findings: detectors vs answer key](docs/img/03-audit-findings.png)
+Open `dashboard/index.html` in a browser. The dashboard works offline and has three views:
 
-## Labelled anomalies (`data/ground_truth/`)
+1. **Threshold Lab:** Explore how review thresholds and quote/template exclusions affect flag counts.
+2. **Case Explorer:** Inspect cases, timelines, reviewer assignments, evidence, decisions and appeals.
+3. **Audit Findings:** Examine detected anomalies and compare them against the ground-truth answer key.
 
-| issue_type                                 | What is injected                                                                                                   | Detected by                                          |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| `flag_auto_guilt`                          | decision from score alone: no reviewers, 1 evidence item, `auto_threshold` basis, `opened -> decided` in 2 minutes | no decider, no reviewers, illegal lifecycle jump     |
-| `reviewer_conflict`                        | a reviewer on the learner's conflict registry (or the assessing instructor) is assigned, `conflict_checked=false`  | join to `reviewer_conflicts` / assessment instructor |
-| `evidence_added_after_decision_no_history` | evidence with `added_at` after the decision, stage not `appeal`, no `state_events` row                             | timestamp comparison + missing audit event           |
-| `appeal_closed_without_independent_review` | appeal resolved with no reviewer, or reviewed by someone from the original case                                    | appeal reviewer null / on case / flag false          |
+### Dashboard previews
 
-Counts: 8 / 8 / 8 / 6 at full scale (2.5% of cases, min 2). `ground_truth.csv` has one row per flag (latent class, band,
-expected outcome, issue label). Generation never reads it; the validator reads it only after detection, to score the detectors.
+![Threshold Lab](docs/img/01-threshold-lab.png)
 
-## Validation results (full run)
+![Case Explorer](docs/img/02-case-explorer.png)
 
-- 112 structural checks pass (including audit-history completeness): PK/unique, FK (incl. polymorphic actor/entity refs), types, enums, ID patterns, date ordering,
-  arithmetic, derived-field reconciliation, one-current-report, SQL seed loads into SQLite with a clean `foreign_key_check`.
-- 5 process checks pass: each detector finds exactly its labelled cases (precision = recall = 1.0), and every illegal lifecycle
-  transition belongs to a labelled anomaly.
-- Negative tests: I corrupted a copy (broken FK, wrong `reviewer_count`, wrong `adjusted_score`) and the validator failed with exit 1.
-- Reproducibility: two regenerations with the same seed produce identical normalized file checksums. The committed dataset matches the regenerated output after normalizing text-file line endings. A different seed produces different output.
+![Audit Findings](docs/img/03-audit-findings.png)
 
-Coverage highlights: 1,000 flags = 750 standard / 170 priority / 80 panel; 508 submissions with raw score >= 25% that were
-**not** flagged because exclusions applied; boundary scores exactly at 0.25 / 0.50 / 0.75 and just under (0.2499); 429 false-positive
-and 206 legitimate-quote flags; 245 of 300 cases with multiple reviewers (26 tiebreaks); 46 appeals, 9 successful (5 overturned,
-4 reduced); 14 SLA breaches; 10 cases still in progress at the snapshot; 20 cases whose final outcome differs from the
-ground-truth expectation: 11 real misconduct cases wrongly cleared, 4 penalties legitimately reduced on appeal, 3 planted
-auto-guilt cases and 2 benign overlaps wrongly sanctioned.
+The dashboard is a read-only inspection tool, not a live case-management application.
 
-## Assumptions and limitations (honest list)
+---
 
-- Fully synthetic; no external data, so no licensing exposure (`data/manifest.json` records this). Names are random picks from a built-in list.
-- Latent causes and error rates are my modelling assumptions, not measured institutional statistics. Distributions are plausible, not calibrated.
-- Case count is pinned to 300 by construction (referral set chosen first, latent class conditioned on it) rather than emerging from triage behaviour.
-- Similarity "evidence" is metadata and hashes; there is no real text or document matching.
-- Only one appeal per case and no second-tier appeal; no learner-side accommodations or collusion (multi-learner) cases.
-- `top_source_type` and quote/template scores correlate with the latent cause, as real features would; they are signal, not labels.
-- Event timestamps are plausible but not business-calendar aware (weekends/holidays ignored).
-- The validator's detectors know the four anomaly _patterns_; they would not find a novel anomaly type.
+## 7. Validation and reproducibility
 
-## Layout
+The full generated dataset is checked for structural integrity and workflow consistency.
 
+### Validation coverage
+
+- Primary-key and uniqueness constraints.
+- Foreign-key relationships and referential integrity.
+- Data types, enums and ID formats.
+- Date ordering and lifecycle consistency.
+- Derived-field reconciliation.
+- Audit-history completeness.
+- SQL schema and seed-data loading.
+- Detection of the four labelled anomaly categories.
+
+### Verification results
+
+| Verification | Result |
+|---|---|
+| Structural validation | 112/112 passed |
+| Process validation | 5/5 passed |
+| Same-seed reproducibility | Passed |
+| Committed dataset comparison | Matched after normalizing text-file line endings |
+| Different-seed comparison | Produced different output |
+| SQLite foreign-key integrity | No violations |
+
+The validator's anomaly-detection results are measured against deliberately injected synthetic anomalies. They should not be interpreted as evidence of equivalent accuracy on real institutional data.
+
+Detailed results are available in [`docs/validation_summary.md`](docs/validation_summary.md) and [`docs/reproducibility_report.md`](docs/reproducibility_report.md).
+
+---
+
+## 8. Assumptions and limitations
+
+This project is a synthetic workflow and data-generation exercise, not a production plagiarism-detection platform.
+
+- All generated records are synthetic; no real student records or external datasets are used.
+- Reviewer and appeal accuracy rates are modelling assumptions and are not empirically calibrated.
+- The case count is deliberately constrained to the challenge target of 300.
+- Similarity evidence consists of metadata and hashes. The system does not perform actual document-level text matching or plagiarism detection.
+- Only one appeal per case is modelled.
+- The anomaly detectors target the four deliberately injected patterns; they do not establish general detection performance against unknown anomalies.
+- The dashboard is static and read-only; it does not provide live case-management operations.
+- Business-calendar effects such as weekends and holidays are not modelled.
+
+---
+
+## 9. Repository structure
+
+```text
+.
+├── src/
+│   ├── schema.py
+│   ├── rules.py
+│   ├── generate.py
+│   ├── validate.py
+│   ├── repro_check.py
+│   └── build_dashboard.py
+│
+├── data/
+│   ├── csv/
+│   ├── json/
+│   ├── sql/
+│   ├── ground_truth/
+│   ├── manifest.json
+│   └── checksums.sha256
+│
+├── dashboard/
+│   ├── template.html
+│   └── index.html
+│
+├── docs/
+│   ├── data_dictionary.md
+│   ├── validation_summary.md
+│   ├── validation_summary.json
+│   ├── reproducibility_report.md
+│   ├── AI_USE.md
+│   └── img/
+│
+├── prompts/
+│   └── PROMPT_LOG.md
+│
+└── README.md
 ```
-src/schema.py           data model: drives DDL, dictionary and validator
-src/rules.py            probabilities, band ranges, rule lookup, rationale text
-src/generate.py         generator, rule table, anomaly injection, exports
-src/validate.py         structural checks, lifecycle, detectors, ground-truth scoring
-src/repro_check.py      fixed-seed reproducibility proof
-src/build_dashboard.py  embeds the dataset into the dashboard
-dashboard/              template.html + generated index.html (visual demo)
-data/                   generated CSV/JSON/SQL, ground_truth/, manifest, checksums
-docs/                   data dictionary, validation + reproducibility reports, WALKTHROUGH, AI_USE
-prompts/PROMPT_LOG.md   prompts sent to AI tools
-```
+
+---
+
+## 10. AI-use disclosure
+
+AI-assisted development was used during implementation. The AI-use disclosure documents which parts were generated with AI, the work performed to verify the implementation, engineering decisions, and known limitations.
+
+- [AI use disclosure](docs/AI_USE.md)
+- [Prompt history](prompts/PROMPT_LOG.md)
+
+---
+
+**Project:** Academic Integrity Case Management — Synthetic Dataset Generator  
+**Challenge:** YottaFlex AI  
+**Repository:** https://github.com/mikasa-tech/academic-integrity-case-generator
+
+
